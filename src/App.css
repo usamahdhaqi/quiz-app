@@ -26,13 +26,20 @@ body {
   max-width: 650px;
   text-align: center;
   border: 1px solid rgba(195, 190, 247, 0.4);
-  
-  /* Tambahan baru */
-  min-height: 500px; /* tinggi minimum agar tidak mengecil */
+
+  /* ✅ Perbaikan Stabilitas Lebar */
+  box-sizing: border-box;      /* hitung padding ke dalam lebar */
+  min-width: 650px;            /* pastikan selalu lebar minimum sama */
+  margin-left: auto;           /* selalu di tengah */
+  margin-right: auto;
+  overflow-x: hidden;          /* cegah geser horizontal */
+  transition: all 0.3s ease;   /* biar perubahan lembut */
+
+  /* ✅ Bonus: stabilkan tinggi juga */
+  min-height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* posisi konten di tengah vertikal */
-  transition: min-height 0.3s ease; /* agar transisi halus */
+  justify-content: center;
 }
 
 /* ==============================
@@ -185,12 +192,13 @@ h2 {
   line-height: 1.5;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .app {
-    padding: 25px 20px 35px;
-    min-height: 420px;
+    width: 90%;
+    min-width: unset;   /* hilangkan batas 650px di mobile */
+    padding: 30px 20px 40px;
   }
-
+  
   .app h1 {
     font-size: 1.6rem;
   }
