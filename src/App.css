@@ -154,20 +154,28 @@ body {
 }
 
 /* ==============================
-   INFO BAR (Timer + Score)
+   STICKY INFO BAR (Timer + Score)
    ============================== */
 .info-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px auto 20px;
+  margin: 0 auto 15px;
   width: 100%;
   max-width: 550px;
-  background: #effffa;
-  border: 1px solid #e5ecf4;
-  border-radius: 10px;
-  padding: 8px 16px;
-  box-shadow: 0 3px 8px rgba(195, 190, 247, 0.2);
+  padding: 10px 18px;
+
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(195, 190, 247, 0.3);
+  border-radius: 12px;
+
+  /* Subtle floating look */
+  box-shadow: 0 4px 16px rgba(138, 79, 255, 0.15);
 }
 
 .info-bar div {
@@ -175,7 +183,6 @@ body {
   align-items: center;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #4b4b6a;
 }
 
 .info-bar .timer {
@@ -184,6 +191,16 @@ body {
 
 .info-bar .score {
   color: #8a4fff;
+}
+
+.info-bar {
+  opacity: 0.95;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.info-bar:hover {
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 /* ==============================

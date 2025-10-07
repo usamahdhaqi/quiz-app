@@ -47,13 +47,13 @@ const Quiz = ({ questions }) => {
 
   return (
     <div>
-      <ProgressBar current={current} total={questions.length} />
+      {/* Sticky Info Bar */}
       <div className="info-bar">
         <div className="timer">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#6f38c5" viewBox="0 0 24 24" style={{ verticalAlign: "middle", marginRight: "6px" }}>
             <path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1Zm0 20a9 9 0 1 1 9-9a9.01 9.01 0 0 1-9 9ZM13 7h-2v6l5.25 3.15L17 14.92l-4-2.42Z" />
           </svg>
-          Waktu tersisa: {timeLeft} detik
+          Waktu: {timeLeft}s
         </div>
 
         <div className="score">
@@ -64,6 +64,7 @@ const Quiz = ({ questions }) => {
         </div>
       </div>
 
+      <ProgressBar current={current} total={questions.length} />
       <QuestionCard data={questions[current]} onAnswer={handleAnswer} />
     </div>
   );
