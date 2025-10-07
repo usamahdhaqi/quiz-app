@@ -48,14 +48,23 @@ const Quiz = ({ questions }) => {
   return (
     <div>
       <ProgressBar current={current} total={questions.length} />
-      <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#6f38c5" viewBox="0 0 24 24" style={{ verticalAlign: "middle", marginRight: "6px" }}>
-          <path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1Zm0 20a9 9 0 1 1 9-9a9.01 9.01 0 0 1-9 9ZM13 7h-2v6l5.25 3.15L17 14.92l-4-2.42Z" />
-        </svg>
-        Waktu tersisa: {timeLeft} detik
-      </p>
+      <div className="info-bar">
+        <div className="timer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#6f38c5" viewBox="0 0 24 24" style={{ verticalAlign: "middle", marginRight: "6px" }}>
+            <path d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1Zm0 20a9 9 0 1 1 9-9a9.01 9.01 0 0 1-9 9ZM13 7h-2v6l5.25 3.15L17 14.92l-4-2.42Z" />
+          </svg>
+          Waktu tersisa: {timeLeft} detik
+        </div>
+
+        <div className="score">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#8a4fff" viewBox="0 0 24 24" style={{ verticalAlign: "middle", marginRight: "6px" }}>
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.401 8.174L12 18.896l-7.335 3.87 1.401-8.174L.132 9.21l8.2-1.192z"/>
+          </svg>
+          Skor: {score}
+        </div>
+      </div>
+
       <QuestionCard data={questions[current]} onAnswer={handleAnswer} />
-      <p>Skor: {score}</p>
     </div>
   );
 };

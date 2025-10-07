@@ -154,6 +154,39 @@ body {
 }
 
 /* ==============================
+   INFO BAR (Timer + Score)
+   ============================== */
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto 20px;
+  width: 100%;
+  max-width: 550px;
+  background: #effffa;
+  border: 1px solid #e5ecf4;
+  border-radius: 10px;
+  padding: 8px 16px;
+  box-shadow: 0 3px 8px rgba(195, 190, 247, 0.2);
+}
+
+.info-bar div {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4b4b6a;
+}
+
+.info-bar .timer {
+  color: #6f38c5;
+}
+
+.info-bar .score {
+  color: #8a4fff;
+}
+
+/* ==============================
    RESULTS & RELOAD BUTTON
    ============================== */
 h2 {
