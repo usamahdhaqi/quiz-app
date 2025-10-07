@@ -65,7 +65,7 @@ body {
    QUESTION CARD
    ============================== */
 .question-card {
-  background: linear-gradient(135deg, #ffffff, #effffa);
+  background: linear-gradient(315deg, #effffa, #ffffff);
   border-radius: 14px;
   padding: 22px 25px;
   margin: 20px auto;
@@ -98,7 +98,7 @@ body {
   border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 500;
-  background: linear-gradient(135deg, #c3bef7, #8a4fff);
+  background: linear-gradient(135deg, #8a4fff, #c3bef7);
   color: #fff;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -153,29 +153,25 @@ body {
   font-weight: 600;
 }
 
-/* ==============================
-   STICKY INFO BAR (Timer + Score)
-   ============================== */
+/* ========================================
+   SOLID HEADER BAR (Timer + Score)
+   ======================================== */
 .info-bar {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 30;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto 15px;
   width: 100%;
-  max-width: 550px;
-  padding: 10px 18px;
+  max-width: 540px;
+  padding: 12px 24px;
 
-  /* Glassmorphism effect */
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(195, 190, 247, 0.3);
-  border-radius: 12px;
-
-  /* Subtle floating look */
-  box-shadow: 0 4px 16px rgba(138, 79, 255, 0.15);
+  /* Gradient Solid Header */
+  background: linear-gradient(135deg, #8a4fff, #6f38c5);
+  color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(138, 79, 255, 0.3);
 }
 
 .info-bar div {
@@ -183,24 +179,29 @@ body {
   align-items: center;
   font-size: 0.95rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
-.info-bar .timer {
-  color: #6f38c5;
+.info-bar svg {
+  fill: #ffffff;
+  margin-right: 6px;
 }
 
-.info-bar .score {
-  color: #8a4fff;
+.info-bar .timer svg {
+  fill: #effffa;
 }
 
-.info-bar {
-  opacity: 0.95;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.info-bar .score svg {
+  fill: #ffffff;
 }
 
-.info-bar:hover {
-  opacity: 1;
-  transform: translateY(-1px);
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .info-bar {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
 }
 
 /* ==============================
@@ -214,7 +215,7 @@ h2 {
 }
 
 .reload-btn {
-  background: linear-gradient(135deg, #8a4fff, #c3bef7);
+  background: linear-gradient(135deg, #8a4fff, #6f38c5);
   color: white;
   font-weight: 600;
   padding: 10px 24px;
@@ -228,7 +229,7 @@ h2 {
 }
 
 .reload-btn:hover {
-  background: linear-gradient(135deg, #6f38c5, #8a4fff);
+  background: linear-gradient(135deg, #c3bef7 #8a4fff);
   transform: translateY(-2px);
   box-shadow: 0 7px 18px rgba(138, 79, 255, 0.4);
 }
