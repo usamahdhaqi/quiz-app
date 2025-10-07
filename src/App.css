@@ -229,7 +229,7 @@ h2 {
 }
 
 .reload-btn:hover {
-  background: linear-gradient(135deg, #8a4fff, #c3bef7);
+  background: linear-gradient(135deg, #c3bef7, #8a4fff);
   transform: translateY(-2px);
   box-shadow: 0 7px 18px rgba(138, 79, 255, 0.4);
 }
