@@ -260,6 +260,10 @@ h2 {
   .app h1 {
     font-size: 1.6rem;
   }
+
+  .info-bar {
+    max-width: 237px;
+  }
 }
 
 @media (max-width: 600px) {
