@@ -19,10 +19,10 @@
 ## 🖼️ Preview
 
 ### 💻 Desktop View  
-![Desktop Screenshot](./screenshots/desktop-preview.png)
+![Desktop Screenshot](./public/screenshots/screenshot-quiz-app-desktop.PNG)
 
 ### 📱 Mobile View  
-![Mobile Screenshot](./screenshots/mobile-preview.png)
+![Mobile Screenshot](./public/screenshots/screenshot-quiz-app-mobile.PNG)
 
 > *The purple gradient theme was inspired by the color palette:*  
 > `["#ffffff", "#effffa", "#e5ecf4", "#c3bef7", "#8a4fff"]`
