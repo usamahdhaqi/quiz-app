@@ -1,72 +1,180 @@
-# 🧠 Genius Quiz App
-
-![React](https://img.shields.io/badge/React-18-blue?logo=react)
-![NPM](https://img.shields.io/badge/npm-v9-red?logo=npm)
-![License](https://img.shields.io/github/license/usamahdhaqi/quiz-app)
-![Stars](https://img.shields.io/github/stars/usamahdhaqi/quiz-app?style=social)
-
-A modern **Quiz Application** built with **React.js** and the **Open Trivia API**.  
-This app challenges your knowledge with multiple choice questions, tracks your score, features a countdown timer, and includes a stylish progress bar.  
+# 🧠 Genius Quiz App  
+> A modern, interactive quiz web app built with **React JS**, featuring real-time score tracking, countdown timer, smooth transitions, and a clean minimalist UI with purple gradient theme.
 
 ---
 
-## 🚀 Features
-- 🎯 Multiple question types (via Open Trivia API)  
-- 🏆 Score tracking system  
-- ⏱️ Countdown timer per question  
-- 📊 Interactive progress bar  
-- 💾 Local caching (avoid API spam)  
-- 🎨 Smart, genius, modern UI (custom CSS theme)  
+## ✨ Features
+
+✅ **Dynamic Quiz System** – Fetches questions from [Open Trivia DB API](https://opentdb.com/).  
+✅ **Smart Local Cache** – Automatically saves quiz data to `localStorage` for faster reloads.  
+✅ **Real-Time Timer** – Each question includes a live countdown timer.  
+✅ **Responsive Design** – Fully optimized for both desktop and mobile devices.  
+✅ **Sticky Header Bar** – Timer & score remain visible at all times.  
+✅ **Modern UI/UX** – Smooth gradient palette, SVG icons, and glassmorphism card design.  
+✅ **Animated Loading Screen** – Professional spinner animation while fetching questions.  
+✅ **Reload Quiz Instantly** – Regenerate a new quiz with one click.
 
 ---
 
-## 📸 Screenshots
-> (Tambahkan screenshot aplikasi di sini, misalnya `./screenshot.png`)
+## 🖼️ Preview
 
-![Quiz Screenshot](./screenshot.png)
+### 💻 Desktop View  
+![Desktop Screenshot](./screenshots/desktop-preview.png)
+
+### 📱 Mobile View  
+![Mobile Screenshot](./screenshots/mobile-preview.png)
+
+> *The purple gradient theme was inspired by the color palette:*  
+> `["#ffffff", "#effffa", "#e5ecf4", "#c3bef7", "#8a4fff"]`
 
 ---
 
-## 🛠️ Technologies
-- [React.js](https://reactjs.org/) – frontend library  
-- [Open Trivia API](https://opentdb.com/) – trivia question source  
-- CSS – custom modern styling  
+## 🧩 Project Structure
+
+```
+react-quiz-app/
+│
+├── src/
+│   ├── components/
+│   │   ├── Quiz.js
+│   │   ├── QuestionCard.js
+│   │   ├── ProgressBar.js
+│   │
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│
+├── public/
+│   ├── index.html
+│
+├── package.json
+└── README.md
+```
 
 ---
 
-## 📦 Installation
-Clone the repository and install dependencies:
+## 🚀 Getting Started
 
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/usamahdhaqi/quiz-app.git
 cd quiz-app
+```
+
+### 2️⃣ Install dependencies
+```bash
 npm install
+```
+
+### 3️⃣ Run the app
+```bash
 npm start
 ```
 
----
-
-## 🌐 Deployment
-This project can be deployed easily using **GitHub Pages** or platforms like **Vercel**.  
-To deploy on GitHub Pages:
-
+### 4️⃣ Build for production
 ```bash
-npm run deploy
-```
-
-Then visit:
-```
-https://usamahdhaqi.github.io/quiz-app
+npm run build
 ```
 
 ---
 
-## 🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.  
+## 🎨 UI Design Highlights
+
+| Component | Description |
+|------------|--------------|
+| **Header Bar** | Sticky gradient bar that displays timer ⏱ and score ⭐ side-by-side |
+| **Question Card** | Glassmorphism style card with reversed diagonal gradient and hover effects |
+| **Buttons** | Soft gradient hover with subtle elevation transitions |
+| **Progress Bar** | Animated purple gradient showing quiz progress |
+| **Loading Screen** | Circular animated spinner with glowing edges |
+| **Reload Button** | Gradient teal button to regenerate new quiz instantly |
 
 ---
 
-## 📜 License
-Distributed under the MIT License. See `LICENSE` for more information.
+## ⚙️ Technologies Used
+
+- **React JS (Hooks & Functional Components)**  
+- **CSS3 (Flexbox + Glassmorphism + Gradient Design)**  
+- **JavaScript (ES6)**  
+- **Open Trivia DB API**  
+- **LocalStorage API**
 
 ---
+
+## 🧠 Quiz Flow Overview
+
+1. Fetch 10 random multiple-choice questions from Open Trivia API.  
+2. Display one question at a time with countdown timer (default: 15s).  
+3. User selects an answer → auto-advance to next question.  
+4. Score is updated instantly.  
+5. Once all questions are answered, show final result summary.  
+6. “Reload” button regenerates new questions instantly.
+
+---
+
+## 🧵 Color Palette
+
+| Name | Hex Code | Usage |
+|------|-----------|--------|
+| White | `#ffffff` | Base background |
+| Mint White | `#effffa` | Card & accent backgrounds |
+| Soft Blue | `#e5ecf4` | Secondary background |
+| Soft Purple | `#c3bef7` | Button & gradient blend |
+| Deep Purple | `#8a4fff` | Primary brand color |
+
+---
+
+## 🧩 Example Components
+
+### ProgressBar.js
+```jsx
+<div className="progress-bar">
+  <div className="fill" style={{ width: `${percent}%` }}></div>
+</div>
+```
+
+### QuestionCard.js
+```jsx
+<div className="question-card">
+  <h3 dangerouslySetInnerHTML={{ __html: data.question }} />
+  {answers.map((ans, idx) => (
+    <button key={idx} onClick={() => onAnswer(ans === data.correct_answer)}>
+      {ans}
+    </button>
+  ))}
+</div>
+```
+
+---
+
+## 🧑‍🎨 Design Philosophy
+
+> “Simplicity, clarity, and focus.”  
+Every element in the Genius Quiz App was designed to minimize distraction and maximize engagement.  
+The layout uses **central alignment, soft gradients, SVG-based icons,** and a **subtle depth hierarchy** to keep users immersed.
+
+---
+
+## 📦 Future Enhancements
+
+- ✅ Add category & difficulty selection menu  
+- ✅ Add sound effects for correct/wrong answers  
+- ✅ Add result analytics (accuracy & time per question)  
+- ✅ Dark mode toggle  
+- ✅ Leaderboard integration using Firebase or Supabase  
+
+---
+
+## 🧰 License
+
+This project is released under the **MIT License** — free to use, modify, and distribute.  
+See the [LICENSE](./LICENSE) file for more details.
+
+---
+
+## 💜 Credits
+
+Created with passion by [Your Name](https://github.com/usamahdhaqi)  
+Design inspired by minimal UI trends and soft pastel gradients ✨  
+
+> *If you like this project, please give it a ⭐ on GitHub — it really helps!*
